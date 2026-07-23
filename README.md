@@ -4,7 +4,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/sendgo-python?logo=pypi)](https://pypi.org/project/sendgo-python/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python)](https://python.org)
-[![Downloads](https://img.shields.io/pypi/dm/sendgo-python)](https://pypi.org/project/sendgo-python/)
+[![Downloads](https://img.shields.io/pypi/dm/python)](https://pypi.org/project/sendgo-python/)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 `sendgo-python`은 [Sendgo](https://sendgo.io) 알림 API를 위한 공식 Python SDK입니다.
@@ -385,9 +385,9 @@ A. Sendgo 플랜별로 TPS 제한이 있습니다. [요금 정책](https://sendg
 
 | 언어/프레임워크 | 패키지 | GitHub |
 |----------------|--------|--------|
-| Spring Boot | `io.sendgo:sendgo-spring-boot-starter` | [sendgo-spring-boot-starter](https://github.com/send-go/sendgo-spring-boot-starter) |
-| Node.js | `@sendgo/node` | [sendgo-node](https://github.com/send-go/sendgo-node) |
-| Go | `github.com/send-go/sendgo-go` | [sendgo-go](https://github.com/send-go/sendgo-go) |
+| Spring Boot | `io.sendgo:sendgo-spring` | [sendgo-spring-boot-starter](https://github.com/send-go/spring) |
+| Node.js | `@sendgo/node` | [sendgo-node](https://github.com/send-go/node) |
+| Go | `github.com/send-go/go` | [sendgo-go](https://github.com/send-go/go) |
 | 전체 목록 | — | [send-go GitHub 조직](https://github.com/send-go) |
 
 ---
