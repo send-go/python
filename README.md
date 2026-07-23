@@ -361,7 +361,7 @@ except SendgoError as e:
 | `kakao_sender_key` | `str \| None` | 선택 | `None` | 카카오 발신프로필 키 |
 | `sms_sender_key` | `str \| None` | 선택 | `None` | SMS 발신자 키 |
 | `api_version` | `str` | 선택 | `'v1'` | API 버전 (`v1` \| `v2`) |
-| `base_url` | `str` | 선택 | `'https://api.sendgo.io'` | API 기본 URL |
+| `base_url` | `str` | 선택 | `'https://sendgo.io'` | API 기본 URL |
 
 ---
 

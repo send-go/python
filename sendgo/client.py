@@ -40,7 +40,7 @@ class Sendgo:
         kakao_sender_key: str | None = None,
         sms_sender_key: str | None = None,
         api_version: str = "v1",
-        base_url: str = "https://api.sendgo.io",
+        base_url: str = "https://sendgo.io",
     ) -> None:
         token_manager = TokenManager(base_url, access_key, secret_key, api_version)
         http = HttpClient(token_manager, base_url, api_version)
