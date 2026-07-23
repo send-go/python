@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "sendgo-python"
+version = "1.0.0"
+description = "Sendgo Python SDK — 카카오 알림톡/친구톡, SMS/LMS/MMS"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Sendgo", email = "dev@sendgo.io"}]
+keywords = ["sendgo", "kakao", "alimtalk", "sms", "notification", "korea"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.10"
+dependencies = ["requests>=2.28.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-mock>=3.12", "mypy>=1.9", "ruff>=0.4"]
+async = ["httpx>=0.27"]
+
+[project.urls]
+Homepage = "https://sendgo.io"
+Repository = "https://github.com/sendgo-dev/sendgo-python"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sendgo*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.mypy]
+strict = true
+python_version = "3.10"
