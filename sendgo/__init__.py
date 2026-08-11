@@ -24,4 +24,4 @@ from .client import Sendgo
 from .exceptions import SendgoError
 
 __all__ = ["Sendgo", "SendgoError", "BrandMessageService", "ShortUrlService"]
-__version__ = "1.0.0"
+__version__ = "1.1.0"
