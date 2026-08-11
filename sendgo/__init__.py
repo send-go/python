@@ -24,4 +24,11 @@ from .client import Sendgo
 from .exceptions import SendgoError
 
 __all__ = ["Sendgo", "SendgoError", "BrandMessageService", "ShortUrlService"]
-__version__ = "1.1.0"
+try:
+    from importlib.metadata import PackageNotFoundError, version as _pkg_version
+
+    # 버전은 pyproject.toml 이 단일 출처다. 여기에 값을 또 적으면
+    # 릴리스마다 두 곳을 맞춰야 하고, 실제로 어긋난 적이 있다.
+    __version__ = _pkg_version("sendgo-python")
+except PackageNotFoundError:  # 설치되지 않은 소스 트리에서 import 한 경우
+    __version__ = "0.0.0.dev0"
