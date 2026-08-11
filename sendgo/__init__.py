@@ -18,8 +18,10 @@ Sendgo Python SDK — 카카오 알림톡/친구톡, SMS/LMS/MMS
     )
 """
 
+from .brand_message import BrandMessageService
+from .short_url import ShortUrlService
 from .client import Sendgo
 from .exceptions import SendgoError
 
-__all__ = ["Sendgo", "SendgoError"]
+__all__ = ["Sendgo", "SendgoError", "BrandMessageService", "ShortUrlService"]
 __version__ = "1.0.0"

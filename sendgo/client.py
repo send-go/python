@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from .alimtalk import AlimtalkService
+from .brand_message import BrandMessageService
 from .friendtalk import FriendtalkService
 from .http_client import HttpClient
+from .short_url import ShortUrlService
 from .sms import SmsService
 from .token_manager import TokenManager
 
@@ -45,6 +47,10 @@ class Sendgo:
         token_manager = TokenManager(base_url, access_key, secret_key, api_version)
         http = HttpClient(token_manager, base_url, api_version)
 
-        self.alimtalk   = AlimtalkService(http, kakao_sender_key, sms_sender_key)
-        self.friendtalk = FriendtalkService(http, kakao_sender_key, sms_sender_key)
-        self.sms        = SmsService(http, sms_sender_key)
+        self.alimtalk      = AlimtalkService(http, kakao_sender_key, sms_sender_key)
+        self.friendtalk    = FriendtalkService(http, kakao_sender_key, sms_sender_key)
+        # 카카오 브랜드메시지 — 친구톡의 후속 채널. v2 전용.
+        self.brand_message = BrandMessageService(http, kakao_sender_key, sms_sender_key)
+        # 짧은 URL — 링크 단축과 클릭 반응 분석. v2 전용.
+        self.short_url     = ShortUrlService(http)
+        self.sms           = SmsService(http, sms_sender_key)
