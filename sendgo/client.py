@@ -48,6 +48,7 @@ class Sendgo:
         http = HttpClient(token_manager, base_url, api_version)
 
         self.alimtalk      = AlimtalkService(http, kakao_sender_key, sms_sender_key)
+        # Deprecated — 친구톡은 2025-12-31 종료. brand_message 를 사용한다.
         self.friendtalk    = FriendtalkService(http, kakao_sender_key, sms_sender_key)
         # 카카오 브랜드메시지 — 친구톡의 후속 채널. v2 전용.
         self.brand_message = BrandMessageService(http, kakao_sender_key, sms_sender_key)
