@@ -2,11 +2,19 @@ from __future__ import annotations
 
 from .alimtalk import AlimtalkService
 from .brand_message import BrandMessageService
+from .brand_template import BrandTemplateService
 from .friendtalk import FriendtalkService
 from .http_client import HttpClient
+from .kakao_image import KakaoImageService
+from .kakao_sender import KakaoSenderService
+from .message_template import MessageTemplateService
+from .notice_template import NoticeTemplateService
+from .rejected_number import RejectedNumberService
+from .sender_registration import SenderRegistrationService
 from .short_url import ShortUrlService
 from .sms import SmsService
 from .token_manager import TokenManager
+from .webhook import WebhookService
 
 
 class Sendgo:
@@ -55,3 +63,17 @@ class Sendgo:
         # 짧은 URL — 링크 단축과 클릭 반응 분석. v2 전용.
         self.short_url     = ShortUrlService(http)
         self.sms           = SmsService(http, sms_sender_key)
+
+        # ------------------------------------------------------ 관리 API (v2)
+        # 콘솔에서만 되던 등록·심사. 발송과 달리 대부분 즉시 완료되지 않는다 —
+        # 등록 성공은 "접수됨"이지 "사용 가능"이 아니다.
+        # 카카오 채널 등록의 인증번호와 휴대폰 발신번호의 본인인증은 사람이
+        # 개입해야 하므로 API 로 대체되지 않는다.
+        self.kakao_senders       = KakaoSenderService(http)
+        self.notice_templates    = NoticeTemplateService(http)
+        self.brand_templates     = BrandTemplateService(http)
+        self.sender_registration = SenderRegistrationService(http)
+        self.message_templates   = MessageTemplateService(http)
+        self.kakao_images        = KakaoImageService(http)
+        self.rejected_numbers    = RejectedNumberService(http)
+        self.webhook             = WebhookService(http)

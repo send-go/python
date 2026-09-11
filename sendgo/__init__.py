@@ -19,11 +19,47 @@ Sendgo Python SDK — 카카오 알림톡/친구톡, SMS/LMS/MMS
 """
 
 from .brand_message import BrandMessageService
+from .brand_template import BrandTemplateService
+from .kakao_image import (
+    MULTI_IMAGE_TYPES,
+    SINGLE_IMAGE_TYPES,
+    KakaoImageService,
+)
+from .kakao_sender import KakaoSenderService
+from .message_template import MessageTemplateService
+from .notice_template import NoticeTemplateService
+from .rejected_number import RejectedNumberService
+from .sender_registration import (
+    IDENTITY_DOCUMENT_TYPES,
+    REGISTRABLE_TYPES,
+    SenderRegistrationService,
+)
+from .webhook import WEBHOOK_EVENTS, WebhookService, verify_signature
 from .short_url import ShortUrlService
 from .client import Sendgo
 from .exceptions import SendgoError
 
-__all__ = ["Sendgo", "SendgoError", "BrandMessageService", "ShortUrlService"]
+__all__ = [
+    "Sendgo",
+    "SendgoError",
+    "BrandMessageService",
+    "ShortUrlService",
+    # 관리 API (v2 전용) — 등록 · 심사
+    "KakaoSenderService",
+    "NoticeTemplateService",
+    "BrandTemplateService",
+    "SenderRegistrationService",
+    "MessageTemplateService",
+    "KakaoImageService",
+    "RejectedNumberService",
+    "WebhookService",
+    "REGISTRABLE_TYPES",
+    "IDENTITY_DOCUMENT_TYPES",
+    "SINGLE_IMAGE_TYPES",
+    "MULTI_IMAGE_TYPES",
+    "WEBHOOK_EVENTS",
+    "verify_signature",
+]
 try:
     from importlib.metadata import PackageNotFoundError, version as _pkg_version
 
