@@ -18,6 +18,7 @@ Sendgo Python SDK — 카카오 알림톡/친구톡, SMS/LMS/MMS
     )
 """
 
+from .account import AccountClient
 from .brand_message import BrandMessageService
 from .brand_template import BrandTemplateService
 from .kakao_image import (
@@ -40,6 +41,7 @@ from .client import Sendgo
 from .exceptions import SendgoError
 
 __all__ = [
+    "AccountClient",
     "Sendgo",
     "SendgoError",
     "BrandMessageService",
