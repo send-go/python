@@ -15,6 +15,7 @@ from .short_url import ShortUrlService
 from .sms import SmsService
 from .token_manager import TokenManager
 from .webhook import WebhookService
+from .template_folder import TemplateFolderService
 
 
 class Sendgo:
@@ -81,3 +82,4 @@ class Sendgo:
         self.kakao_images        = KakaoImageService(http)
         self.rejected_numbers    = RejectedNumberService(http)
         self.webhook             = WebhookService(http)
+        self.template_folders    = TemplateFolderService(http)

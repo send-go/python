@@ -52,11 +52,13 @@ class NoticeTemplateService:
         inspection_status: str | None = None,
         search: str | None = None,
         count: int | None = None,
+        folder_uuid: str | None = None,
     ) -> dict[str, Any]:
         """목록 조회."""
         return self._http.get(
             self._RESOURCE,
             {
+                "folderUuid": folder_uuid,
                 "kakaoSenderKey": kakao_sender_key,
                 "inspectionStatus": inspection_status,
                 "search": search,

@@ -43,11 +43,12 @@ class BrandTemplateService:
         kakao_sender_key: str | None = None,
         search: str | None = None,
         count: int | None = None,
+        folder_uuid: str | None = None,
     ) -> dict[str, Any]:
         """목록 조회."""
         return self._http.get(
             self._RESOURCE,
-            {"kakaoSenderKey": kakao_sender_key, "search": search, "count": count},
+            {"folderUuid": folder_uuid, "kakaoSenderKey": kakao_sender_key, "search": search, "count": count},
         )
 
     def show(self, template_code: str) -> dict[str, Any]:
