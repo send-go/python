@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from .email import EmailService
 from .alimtalk import AlimtalkService
 from .brand_message import BrandMessageService
 from .brand_template import BrandTemplateService
@@ -56,6 +57,7 @@ class Sendgo:
         token_manager = TokenManager(base_url, access_key, secret_key, api_version)
         http = HttpClient(token_manager, base_url, api_version)
 
+        self.email = EmailService(token_manager, base_url, api_version)
         self.alimtalk      = AlimtalkService(http, kakao_sender_key, sms_sender_key)
         # Deprecated — 친구톡은 2025-12-31 종료. brand_message 를 사용한다.
         self.friendtalk    = FriendtalkService(http, kakao_sender_key, sms_sender_key)

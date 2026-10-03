@@ -5,7 +5,7 @@ from typing import Any, Literal
 from .http_client import HttpClient
 
 BrandMessageType = Literal["FT", "FI", "FW", "FL", "FM", "FC", "FA", "FP"]
-BrandMessageTargeting = Literal["M", "N", "I", "F"]
+BrandMessageTargeting = Literal["M", "N", "I", "O", "F"]
 
 
 class BrandMessageService:
@@ -20,7 +20,7 @@ class BrandMessageService:
 
     Example::
 
-        # 단건 발송 — 채널 친구 대상
+        # 단건 발송 — 지정 수신자 대상
         client.brand_message.send(
             targeting="M",
             message_type="FL",
